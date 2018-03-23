@@ -27,5 +27,7 @@
 		//git checkout -- index.css 把index.css在工作区的修改全部撤销，这里有两种情况:1、 index.css 修改后还没有放到暂存区,现在撤销修改就回到和版本库一模一样的状态; 2、index.css已经添加到暂存区,又作出了修改，现在撤销修改就回到添加到暂存区后的状态。 总之就是让这个文件回到最近一次git commit 或git add时的状态.
 			//场景1 当你改乱了工作区某个文件内容，想丢弃修改可以直接用git checkout -- 文件名. 场景2 当你改乱了工作区某个文件内容,还添加到了暂存区,想丢弃修改,分两步,第一步用命令git reset HEAD 文件名,就回到了场景1,第二步就按场景1操作
 		//删除文件 rm 文件名(此命令只能在git bash终端使用)
+		//远程GitHub仓库
+			//创建SSH Key.再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：ssh-keygen -t rsa -C "youremail@example.com"(git bash命令).一路回车。正常情况下,会在主目录里生成.ssh目录(包含id_rsa、id_rsa.pub两个文件),两个文件就是SSH Key的秘匙对,id_rsa是私匙,不能泄露出去,id_rsa.pub是公匙,可以放心地告诉任何人.登陆GitHub，打开“Account settings”，“SSH Keys”页面.然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库learn-git.把本地仓库的内容推送到GitHub仓库.git remote add origin git@github.com:18701186836/git-learn.git.添加后,远程仓库的名字就叫origin,这是git默认的叫法,也可以改成别的.git push -u origin master(把本地所有内容推送到远程库上)
 </script>
 </html>
