@@ -16,6 +16,11 @@
 		//git status 查看当前仓库状态,一般修改文件之前，都会查看下当前状态
 		//git diff 查看difference 修改文件和提交文件的区别
 			//如果看到有不同的信息，可以git add ,然后再git status. 而后再提交 git commit
-		//git log 显示从最近到最远的提交日志(如果嫌弃输出信息太多,看得眼花缭乱的，可以用git log -pretty=online).第一条是最新的提交
+		//git log(退出log 按q) 显示从最近到最远的提交日志(如果嫌弃输出信息太多,看得眼花缭乱的，可以用git log -pretty=online).第一条是最新的提交
+		//git reset --hard HEAD^ 返回上一个版本(有的需要使用HEAD^^).想要返回之前最新提交的版本,需要输入git reset --hard id(id可以通过git log查看,commit里面最后面的数字即为id),如果git log显示的信息没有记录,可以通过git reflog查看
+		//git和其他版本控制系统如SVN的一个不同之处就是有暂存区的概念.
+			//工作区 就是你在电脑里能看到的目录文件.
+			//版本库 工作区有一个隐藏目录.git,这个不算工作区,而是git的版本库. 版本库里存了很多东西,其中最重要的就是称为stage(或者叫index)的暂存区,还有git为我们自动创建的第一个分支master,以及指向master的一个指针叫HEAD
+			//前面讲到了我们把文件往git版本库理添加的时候分为两步:1、git add ... 把文件添加进去,实际上就是把文件修改添加到暂存区 2、git commit -m "..." 提交更改,实际上就是把暂存区的所有内容提交到当前分支.  我们创建git仓库时,git自动为我们创建了唯一一个master分支,所以现在git commit就是往分支master上提交更改.  可以简单理解为,需要提交的文件修改通通放到暂存区,然后一次性提交暂存区的所有修改。
 </script>
 </html>
